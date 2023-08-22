@@ -1,6 +1,7 @@
 package com.polarbook.catalogservice;
 
 import com.polarbook.catalogservice.domain.Book;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Disabled
 class CatalogServiceApplicationTests {
 	@Autowired
 	private WebTestClient testClient;

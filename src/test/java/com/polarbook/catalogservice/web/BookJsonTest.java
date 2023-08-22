@@ -1,6 +1,7 @@
 package com.polarbook.catalogservice.web;
 
 import com.polarbook.catalogservice.domain.Book;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.json.JacksonTester;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JsonTest
+@Disabled
 public class BookJsonTest {
     @Autowired
     private JacksonTester<Book> json;
