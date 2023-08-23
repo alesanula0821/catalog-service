@@ -21,7 +21,7 @@ class CatalogServiceApplicationTests {
 	@Test
 	void whenGetRequestWithIdThenBookReturned() {
 		var bookIsbn = "1231231230";
-		var bookToCreate = new Book(bookIsbn, "Title", "Author", 9.90);
+		var bookToCreate = Book.of(bookIsbn, "Title", "Author", 9.90);
 		Book expectedBook = testClient
 				.post()
 				.uri("/books")
