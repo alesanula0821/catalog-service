@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-08-23--01-initial-schema
+      author: alex
+      changes:
+        - sqlFile:
+            path: 2023-08-23--01-initial-schema.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: 2023-08-23--02-alter-table-book-publisher-field
+      author: alex
+      changes:
+        - sqlFile:
+            path: 2023-08-23--02-alter-book-publisher.sql
+            relativeToChangelogFile: true

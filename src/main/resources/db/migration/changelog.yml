@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: alex
+  - include:
+      file: v-1.0/changelog-v.1.0-cumulative.yml
+      relativeToChangelogFile: true
