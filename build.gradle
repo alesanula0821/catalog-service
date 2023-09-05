@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.polarbook'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
 	sourceCompatibility = '20'
@@ -47,4 +47,17 @@ tasks.named('test') {
 
 bootRun {
 	systemProperty 'spring.profiles.active', 'testdata'
+}
+
+bootBuildImage {
+	imageName = "${project.name}"
+	environment["BP_JVM_VERSION"] = "20.*"
+
+	docker {
+		publishRegistry {
+			username = project.findProperty("registryUsername")
+			password = project.findProperty("registryToken")
+			url = project.findProperty("registryUrl")
+		}
+	}
 }
