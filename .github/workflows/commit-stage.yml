@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: alesanula0821k/catalog-service
+  IMAGE_NAME: alesanula0821/catalog-service
   VERSION: latest
 
 jobs:
