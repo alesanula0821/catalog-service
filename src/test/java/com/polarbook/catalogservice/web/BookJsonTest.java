@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JsonTest
-@Disabled
+@ActiveProfiles("integration")
 public class BookJsonTest {
     @Autowired
     private JacksonTester<Book> json;
@@ -33,6 +34,7 @@ public class BookJsonTest {
     void testDeserialize() throws Exception {
         var content = """
                 {
+                    "publisher": "Press",
                     "isbn": "1234567890",
                     "title": "Title",
                     "author": "Author",

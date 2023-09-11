@@ -7,16 +7,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration;
+import org.springframework.cloud.config.client.ConfigClientAutoConfiguration;
+import org.springframework.cloud.config.client.ConfigServiceBootstrapConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
+import org.springframework.data.jdbc.repository.config.EnableJdbcAuditing;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 
 @DataJdbcTest
-@Import(DataConfiguration.class)
+@EnableJdbcAuditing
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("integration")
 class BookRepositoryTest {
