@@ -31,11 +31,12 @@ spring:
     username: user
     password: password
     url: jdbc:postgresql://localhost:5432/polardb_catalog
+    driver-class-name: org.postgresql.Driver
     hikari:
       connection-timeout: 2000
       maximum-pool-size: 5
   liquibase:
-    change-log: classpath:/db/migration/changelog.yml
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
 #  sql:
 #    init:
 #      mode: always
