@@ -1,9 +1,11 @@
 package com.polarbook.catalogservice;
 
+import com.polarbook.catalogservice.configuration.PolarProperties;
 import com.polarbook.catalogservice.domain.Book;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -12,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@EnableConfigurationProperties({PolarProperties.class})
 @ActiveProfiles("integration")
 class CatalogServiceApplicationTests {
 	@Autowired
