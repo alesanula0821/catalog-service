@@ -27,8 +27,8 @@ spec:
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
-            - name: SPRING_CONFIG_IMPORT
-              value: optional:configserver:http://config-service
+           # - name: SPRING_CONFIG_IMPORT
+           #   value: optional:configserver:http://config-service
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://polar-postgres/polardb_catalog?currentSchema=public&user=user&password=password
             - name: SPRING_PROFILES_ACTIVE
