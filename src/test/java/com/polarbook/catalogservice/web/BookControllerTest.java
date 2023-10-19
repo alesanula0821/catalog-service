@@ -1,5 +1,6 @@
 package com.polarbook.catalogservice.web;
 
+import com.polarbook.catalogservice.configuration.SecurityConfiguration;
 import com.polarbook.catalogservice.domain.BookNotFoundException;
 import com.polarbook.catalogservice.domain.BookService;
 import org.junit.jupiter.api.Disabled;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -16,6 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(BookController.class)
 @ActiveProfiles("integration")
+@Import(SecurityConfiguration.class)
 class BookControllerTest {
     @Autowired
     private MockMvc mockMvc;

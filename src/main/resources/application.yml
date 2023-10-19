@@ -12,6 +12,11 @@ server:
 spring:
   application:
     name: catalog-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/PolarBookshop
 #  config:
 #    activate:
 #      on-profile: "default"

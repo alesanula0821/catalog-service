@@ -13,3 +13,10 @@ databaseChangeLog:
         - sqlFile:
             path: 2023-08-23--02-alter-book-publisher.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: 2023-10-19--03-alter-table-book-user-fields
+      author: alex
+      changes:
+        - sqlFile:
+            path: 2023-10-19--03-alter-book-user-modified.sql
+            relativeToChangelogFile: true
