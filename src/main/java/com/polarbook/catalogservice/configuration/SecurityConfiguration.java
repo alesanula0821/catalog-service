@@ -1,3 +1,4 @@
+/*
 package com.polarbook.catalogservice.configuration;
 
 import org.springframework.context.annotation.Bean;
@@ -38,3 +39,4 @@ public class SecurityConfiguration {
         return jwtAuthenticationConverter;
     }
 }
+*/

@@ -3,12 +3,15 @@ package com.polarbook.catalogservice.web;
 import com.polarbook.catalogservice.domain.Book;
 import com.polarbook.catalogservice.domain.BookService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/books")
 class BookController {
+    private static final Logger log = LoggerFactory.getLogger(BookController.class);
     private final BookService bookService;
 
     BookController(BookService bookService) {
@@ -17,6 +20,7 @@ class BookController {
 
     @GetMapping
     Iterable<Book> get() {
+        log.info("Fetching the list of books in the catalog");
         return bookService.viewBookList();
     }
 
